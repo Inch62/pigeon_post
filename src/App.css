@@ -1,0 +1,190 @@
+/* Global Styling */
+body {
+  margin: 0;
+  font-family: "Arial, sans-serif";
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.App {
+  width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.post {
+  color: #f39c12;
+}
+
+.demo-button {
+  padding: 10px 25px;
+  background-color: transparent;
+  color: #fdfcfb;
+  font-size: 1rem;
+  border: 2px solid #fafaf9;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+  background-color: #fcfcfb;
+  color: #000;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+/* Section One */
+.section-one {
+  background-image: url('./Assets/section1.jpg'); /* Use sec1.webp as background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.section-one h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.section-one h1 span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.section-one p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 20px;
+  max-width: 600px;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+/* Section Two */
+.section-two {
+  background: #111;
+  overflow: hidden;
+}
+
+/* Section Three */
+.section-three {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+.section-three h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.section-three h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 10px 0;
+  color: #aaa;
+}
+
+.section-three p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 20px;
+  max-width: 600px;
+  line-height: 1.5;
+  color: #bbb;
+}
+
+/* Image Container */
+.image-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.image-container img {
+  max-width: 600px;
+  height: 600px;
+}
+
+/* Text Container */
+.text-container {
+  z-index: 2;
+  text-align: center;
+  position: relative;
+}
+
+/* Media Queries for Mobile Screens */
+@media screen and (max-width: 768px) {
+  .section-one h1 {
+    font-size: 2.5rem; /* Reduce heading size */
+  }
+
+  .section-one p,
+  .section-three p {
+    max-width: 90%; /* Restrict paragraph width to fit mobile screens */
+    font-size: 0.9rem; /* Reduce font size for readability */
+  }
+
+  .image-container img {
+    max-width: 300px; /* Reduce image size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .section-three h2 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  .section-three h3 {
+    font-size: 1.5rem; /* Adjust subheading size */
+  }
+}
