@@ -12,17 +12,6 @@ body {
   overflow: hidden;
 }
 
-.header {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
-}
 
 .logo {
   font-size: 1.5rem;
@@ -43,12 +32,27 @@ body {
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-right: 20px; /* Add space to ensure the button doesn't get cut out */
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
 }
 
 .demo-button:hover {
   background-color: #fcfcfb;
   color: #000;
 }
+
 
 section {
   height: 100vh;
@@ -62,16 +66,10 @@ section {
 
 /* Section One */
 .section-one {
-  background-image: url('./Assets/section1.jpg'); /* Use sec1.webp as background */
+  background-image: url('./Assets/section1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
   padding: 20px;
 }
 
@@ -80,7 +78,6 @@ section {
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
-  color: #fff;
 }
 
 .section-one h1 span {
@@ -103,32 +100,50 @@ section {
 /* Section Two */
 .section-two {
   background: #111;
-  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+.section-two h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.section-two h1 span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.section-two p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 20px;
+  max-width: 600px;
+  color: #bbb;
+  line-height: 1.5;
 }
 
 /* Section Three */
 .section-three {
   background: #111;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
   padding: 20px;
-  position: relative;
+  text-align: center;
 }
 
 .section-three h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 3rem; /* Adjusted size */
+  font-weight: 700;
   margin: 0;
   line-height: 1.2;
-  color: #fff;
 }
 
 .section-three h3 {
-  font-size: 1.8rem;
+  font-size: 2rem; /* Adjusted size */
   font-weight: 400;
   margin: 10px 0;
   color: #aaa;
@@ -139,8 +154,39 @@ section {
   font-weight: 300;
   margin-top: 20px;
   max-width: 600px;
-  line-height: 1.5;
   color: #bbb;
+  line-height: 1.5;
+}
+
+/* Section Four */
+.section-four {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+}
+
+.section-four h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.section-four h1 span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.section-four p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 20px;
+  max-width: 600px;
+  color: #bbb;
+  line-height: 1.5;
 }
 
 /* Image Container */
@@ -156,23 +202,137 @@ section {
   height: 600px;
 }
 
-/* Text Container */
-.text-container {
-  z-index: 2;
+.section-four .image-container {
+  left: 0;
+  transform: translateY(0);
+}
+/* Section Five */
+/* Section Five */
+.section-five {
+  background: #000; /* Black background */
+  color: #fff;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Align elements vertically */
   text-align: center;
-  position: relative;
+  padding: 20px;
 }
 
-/* Media Queries for Mobile Screens */
+.section-five h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 40px; /* Increase bottom margin for spacing */
+  position: relative;
+  top: -20px; /* Move heading slightly upward */
+}
+
+.form-container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #fff;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+}
+
+.submit-button {
+  width: 100%; /* Full width within the container */
+  max-width: 300px; /* Limit the button width */
+  padding: 15px; /* Adjust padding for a larger button */
+  font-size: 1.2rem; /* Slightly increase font size */
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px; /* Add space above the button */
+}
+
+.submit-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.ok-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ok-button:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+
+/* Media Queries */
 @media screen and (max-width: 768px) {
-  .section-one h1 {
-    font-size: 2.5rem; /* Reduce heading size */
+  .section-one h1,
+  .section-two h1,
+  .section-four h1,
+  .section-three h2 {
+    font-size: 2.5rem; /* Adjusted for smaller screens */
   }
 
   .section-one p,
+  .section-two p,
+  .section-four p,
   .section-three p {
-    max-width: 90%; /* Restrict paragraph width to fit mobile screens */
-    font-size: 0.9rem; /* Reduce font size for readability */
+    max-width: 90%;
+    font-size: 0.9rem; /* Reduced font size */
+  }
+
+  .section-three h3 {
+    font-size: 1.5rem; /* Adjusted size for h3 */
   }
 
   .image-container img {
@@ -180,11 +340,8 @@ section {
     height: auto; /* Maintain aspect ratio */
   }
 
-  .section-three h2 {
-    font-size: 2rem; /* Adjust heading size */
-  }
-
-  .section-three h3 {
-    font-size: 1.5rem; /* Adjust subheading size */
+  .section-four .text-container,
+  .section-three .text-container {
+    padding: 10px; /* Add padding for better layout */
   }
 }
